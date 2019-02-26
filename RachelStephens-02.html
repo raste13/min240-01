@@ -1,0 +1,189 @@
+<html>
+<head></head>
+<style>
+    
+    body {
+        background-color: lightblue;
+    }
+    
+    #foreground {
+        position: absolute;
+        background-color: cadetblue;
+        width: 100vw;
+        height: 35vh;
+        top: 65%;
+        left: 0%;
+        
+    }
+    
+    
+    #globe {
+        position: absolute;
+        background-color: aliceblue;
+        width: 65vmin;
+        height: 65vmin;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        opacity: 0.6;
+        overflow: hidden;
+    
+    }
+    
+    
+    #wacom {
+        position: absolute;
+        left: 10vmin;
+        top: -12vmin;
+        transform-origin: left top;
+        animation: fall 2s linear infinite;
+    }
+    
+    #tablet {
+        background-color: #4f4949;
+        width: 20vmin;
+        height: 13vmin;
+        transform: rotateZ(-10deg);
+    }
+    
+    #pen {
+        position: absolute;
+        background-color: #4f4949;
+        width: 1vmin;
+        height: 13vmin;
+        transform: rotateZ(25deg);
+        clip-path: polygon(0 0, 0% 90%, 50% 100%, 100% 90%, 100% 0%);
+        top: -25;
+        left: 120%;     
+    }
+    
+    
+    #book {
+        position: absolute;
+        transform-origin: left top;
+        animation: fall 2s linear infinite;
+        top: -21vmin;
+        
+    } 
+
+    #frontCover {
+        position: relative;
+        background-color: darkred;
+        width: 15vmin;
+        height: 20vmin;
+        left: 30vmin;
+        transform: skewX(-10deg);
+        z-index: -1;
+        
+    }
+    
+    #backCover {
+        position: absolute;
+        background-color: antiquewhite;
+        width: 18vmin;
+        height: 25vmin;
+        transform: skewX(-10deg);
+        top: -15;
+        left: 30vmin;
+        clip-path: polygon(0 9%, 20% 0, 100% 0, 100% 80%, 85% 89%, 0 90%);
+        z-index: -2;
+        
+    }
+    
+    .star {
+        position: absolute;
+        background-color: darkturquoise;
+        width: 10vmin;
+        height: 10vmin;
+        clip-path: polygon(50% 0, 39% 39%, 0 39%, 30% 62%, 20% 98%, 50% 78%, 81% 98%, 70% 62%, 100% 39%, 61% 39%);
+        
+    }
+    
+    #star1 {
+        top: -3vmin;
+        left: 50vmin;
+        animation: fall 2.3s linear infinite;   
+    }
+    
+    #star2 {
+        top: -10vmin;
+        left: 10vmin;
+        animation: fall 2s linear infinite;   
+    }
+    
+    #star3 {
+        top: -17vmin;
+        left: 25vmin;
+        animation: fall 1.9s linear infinite;
+    }
+    
+    
+    
+    
+    @keyframes fall {
+        from {transform: translateY(0);}
+        to {transform: translateY(650%);}
+    }
+    
+
+    
+    
+    #base {
+        position: absolute;
+        background-color: darkslategray;
+        width: 60vmin;
+        height: 13vmin;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%) perspective(3em) rotateX(10deg);
+        border-radius: 8%;
+    }
+    
+    
+    
+    
+    </style>
+
+    
+    
+    <body>
+        
+        <div id="foreground">
+        </div>
+        
+        
+        <div id="globe">
+        
+        
+        <div id="wacom">
+            <div id="tablet"></div>
+            <div id="pen"></div>
+            </div>
+        
+            
+        <div id="book">
+            <div id="frontCover"></div>
+            <div id="backCover"></div>
+            </div>    
+            
+            
+        <div id="star1" class="star">
+            </div>
+        <div id="star2" class="star">
+            </div>
+        <div id="star3" class="star">
+            </div>
+        
+        
+        </div>
+        
+        
+        
+        
+        <div id="base"></div>
+        
+        
+    
+    </body>    
+</html>
