@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<style>
+    /*wireframe*/
+    body{
+        z-index: 0;
+        margin: 0vmin;
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        background-color: springgreen;
+        overflow: hidden;
+    }
+    
+    
+    
+    #startScreen {
+        position: absolute;
+        top: 15vh;
+        left: 10vw;
+        width: 80vw;
+        height: 70vh;
+        background-color: coral;
+        display: block;
+        z-index: 100;
+        overflow-x: hidden;
+        margin: 0vmin;
+        font-size: 6vmin;
+        text-align: center;
+    }  
+    
+    #gameScreen {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: lightskyblue; 
+        display: block;
+        margin: 0;
+        padding: 0;
+        /*to delete later
+        background-image: url(game-wireframe.png);
+        background-size: cover; */
+        overflow: hidden;
+    }
+    
+    #ground {
+        position: absolute;
+        background-color: darkolivegreen;
+        width: 100vw;
+        height: 15vh;
+        bottom: 0;
+    }
+    
+    #fence{
+        position: absolute;
+        background-color: ghostwhite;
+        width: 100vw;
+        height: 55vh;
+        bottom: 0;
+        clip-path: polygon(0% 15%, 2% 0, 6% 0, 8% 15%, 11% 15%, 13% 0, 17% 0, 19% 14%, 22% 14%, 24% 0, 28% 0, 30% 14%, 33% 14%, 35% 0, 39% 0, 41% 14%, 45% 14%, 47% 0, 51% 0, 53% 14%, 57% 14%, 59% 0, 63% 0, 65% 14%, 68% 14%, 70% 0, 74% 0, 76% 14%, 80% 14%, 82% 0, 87% 0, 89% 14%, 92% 14%, 94% 0, 98% 0, 100% 14%, 100% 98%, 0% 98%);
+    }
+    
+    .stems {
+        position: absolute;
+        width: 20%;
+        height: 25%;
+        clip-path: polygon(44% 100%, 41% 91%, 35% 79%, 35% 79%, 30% 69%, 27% 60%, 27% 53%, 27% 44%, 28% 34%, 27% 28%, 24% 23%, 28% 26%, 29% 31%, 33% 42%, 34% 49%, 36% 60%, 39% 75%, 42% 84%, 42% 78%, 41% 64%, 38% 47%, 37% 35%, 36% 18%, 36% 12%, 37% 7%, 39% 7%, 38% 15%, 38% 26%, 39% 37%, 40% 48%, 42% 57%, 43% 64%, 44% 73%, 45% 87%, 46% 100%); 
+        background-color: darkgreen;
+        bottom: 0;
+    }
+    
+    #stem1{
+        left: 0.5%;
+    }
+    
+    #stem2{
+        left: 10.5%;
+    }
+    
+    #stem3{
+        left: 20.5%;
+    }
+    
+    #stem4{
+        left: 30.5%;
+    }
+    
+    #stem5{
+        left: 40.5%;
+    }
+    
+    #stem6{
+        left: 50.5%;
+    }
+    
+    
+    
+    .flowerTop {
+        position: absolute;
+        top: 70%;
+        width: 7%;
+        height: 10%;
+        border-radius: 50%;
+        clip-path:  polygon(35% 42%, 31% 36%, 31% 28%, 32% 21%, 36% 15%, 39% 13%, 43% 13%, 47% 12%, 51% 12%, 53% 13%, 57% 16%, 59% 21%, 60% 27%, 59% 33%, 58% 38%, 57% 39%, 62% 35%, 65% 33%, 71% 31%, 75% 30%, 80% 31%, 84% 36%, 84% 41%, 84% 49%, 83% 57%, 78% 61%, 70% 62%, 65% 62%, 60% 62%, 66% 67%, 71% 72%, 75% 80%, 73% 89%, 67% 94%, 61% 97%, 55% 97%, 50% 95%, 45% 91%, 44% 85%, 44% 80%, 44% 70%, 43% 80%, 41% 86%, 37% 93%, 29% 97%, 20% 95%, 15% 87%, 13% 77%, 19% 67%, 29% 63%, 33% 61%, 25% 63%, 20% 64%, 13% 64%, 8% 59%, 6% 51%, 7% 44%, 9% 35%, 16% 32%, 22% 33%, 27% 36%, 33% 40%);  
+        transform-origin: bottom;
+    }
+    
+    #flower1 {
+        left: 5%;
+        background-color: red;
+    }
+    
+    #flower2 {
+        left: 15%;
+        background-color: darkorange;
+    }
+    
+    #flower3 {
+        left: 25%;
+        background-color: yellow;
+    }
+    
+    #flower4 {
+        left: 35%;
+        background-color: palegreen;
+    }
+    
+    #flower5 {
+        left: 45%;
+        background-color: mediumblue;
+    }
+    
+    #flower6 {
+        left: 55%;
+        background-color: purple;
+    }
+    
+    
+    #wateringCan {
+        position: absolute;
+        top: 30%;
+        left: 75%;
+        width: 10%;
+        height: 13%;
+        background-color: dimgray;
+        clip-path: polygon(0 0, 0% 31%, 55% 40%, 63% 100%, 100% 100%, 100% 5%);
+        transform: rotate(5deg);
+        
+       
+    }
+    
+    #wateringHose {
+        position: absolute;
+        top: 43%;
+        left: 81%;
+        width: 20%;
+        height: 57%;
+        clip-path: polygon(0% 0%, 3% 25%, 6% 35%, 20% 50%, 54% 58%, 70% 67%, 82% 82%, 88% 100%, 100% 100%, 98% 84%, 88% 65%, 75% 53%, 63% 48%, 38% 41%, 38% 41%, 28% 35%, 19% 21%, 15% 0%);
+        background-color: seagreen;    
+    }
+    
+    #water{
+        position: absolute;
+        width: 70%;
+        height: 60%;
+        top: 10%;
+        left: 5%;
+        transform: rotate(15deg);
+        background-color: deepskyblue;
+        clip-path: polygon(84% 0, 48% 0%, 33% 4%, 21% 8%, 11% 14%, 0 23%, 19% 18%, 38% 12%, 23% 22%, 11% 33%, 1% 47%, 19% 33%, 39% 20%, 33% 32%, 20% 45%, 10% 57%, 2% 71%, 13% 60%, 33% 43%, 54% 25%, 44% 38%, 33% 51%, 28% 62%, 18% 78%, 11% 92%, 24% 79%, 36% 64%, 45% 54%, 69% 31%, 46% 60%, 38% 72%, 28% 91%, 42% 80%, 32% 97%, 47% 80%, 54% 69%, 69% 49%, 48% 94%, 59% 81%, 56% 95%, 66% 72%, 72% 60%, 78% 46%, 70% 76%, 81% 55%, 77% 69%, 87% 45%, 91% 33%, 88% 53%, 95% 33%, 98% 18%, 98% 7%, 93% 2%);
+        opacity: 0;
+        display: block;
+        
+        /* animation: spray 1s ease-in-out;
+        }*/
+    }
+    
+    @keyframes spray {
+        from{opacity: 0;}
+        50%{opacity: 0.3;}
+        to{opacity: 0;}
+        
+    }
+
+    #startBTN {
+        position: absolute;
+        z-index: 101;
+        background-color: aquamarine;
+        left: 50%;
+        top: 78%;
+        transform: translate(-50%, -50%);
+        width: 20%;
+        height: 14%;
+        border-radius: 50%;
+        color: black;
+        margin: 1vw auto;
+        padding: 3vw;
+        font-size: 4vw;
+        text-align: center;
+    }
+    
+    
+    #exitBTN {
+        position: absolute;
+        z-index: 90;
+        background-color: indianred;
+        left: 85%;
+        top: 8%;
+        transform: translate(-50%, -50%);
+        width: 10%;
+        height: 5%;
+        border-radius: 50%;
+        color: black;
+        margin: 1vw auto;
+        padding: 3vw;
+        font-size: 3vw;
+        text-align: center;
+        display: none;
+        
+    }
+    
+    #wireframe {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        background-image: url(game-wireframe.png);
+        background-size: cover;
+        display: none;
+    }
+    
+    #showWireframe {
+        position: absolute;
+        z-index: 1001;
+        background-color: cadetblue;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 15%;
+        height: 5%;
+        border-radius: 50%;
+        color: black;
+        margin: 1vw auto;
+        padding: 3vw;
+        font-size: 3vmin;
+        text-align: center;
+        color: black;
+    }
+    
+    #hideWireframe {
+        position: absolute;
+        z-index: 1001;
+        background-color: cadetblue;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 15%;
+        height: 5%;
+        border-radius: 50%;
+        color: black;
+        margin: 1vw auto;
+        padding: 3vw;
+        font-size: 3vmin;
+        text-align: center;
+        display: none;
+        opacity: 0.5;
+    }
+    
+    </style>
+
+<body> 
+    <div id="wireframe">
+    <div id="hideWireframe"></div>
+    </div>
+    
+    <div id="startScreen"><br>Click on the watering hose repeatedly to make the flowers grow!
+    <div id="showWireframe"></div>
+    <div id="startBTN"></div>
+    </div>
+<div id="gameScreen">
+    
+    <div id="fence"></div>
+    <div id="ground"></div>
+    
+    <div class="stems" id="stem1"></div>
+    <div class="stems" id="stem2"></div>
+    <div class="stems" id="stem3"></div>
+    <div class="stems" id="stem4"></div>
+    <div class="stems" id="stem5"></div>
+    <div class="stems" id="stem6"></div>
+    
+    <div class= "flowerTop" id="flower1"></div>
+    <div class= "flowerTop" id="flower2"></div>
+    <div class= "flowerTop" id="flower3"></div>
+    <div class= "flowerTop" id="flower4"></div>
+    <div class= "flowerTop" id="flower5"></div>
+    <div class= "flowerTop" id="flower6"></div>
+    
+    <div id="wateringHose"></div>
+     <div id="wateringCan"></div>
+    <div id="water"></div>
+    
+    <div id="exitBTN"></div>
+</div>
+
+     
+    
+    
+    
+    <!--<script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js”>-->
+    <script>
+    
+    var myStartScreen;
+        myStartScreen = document.querySelector("#startScreen");
+    
+    var myGameScreen;
+        myGameScreen = document.querySelector("#gameScreen");
+        
+    var myStartBTN;
+        myStartBTN = document.querySelector("#startBTN");
+    
+    var myEndBTN;
+        myEndBTN = document.querySelector("#exitBTN");
+    
+    var myWireframeBTN;
+        myWireframeBTN = document.querySelector("#showWireframe");
+    var wireframe;
+        wireframe = document.querySelector("#wireframe")
+    var mywireframeHIDE;
+        mywireframeHIDE = document.querySelector("#hideWireframe");
+        
+    myWireframeBTN.innerHTML = "View wireframe";
+    myWireframeBTN.style.cursor = "pointer";
+        
+    mywireframeHIDE.innerHTML = "Go back";
+    mywireframeHIDE.style.cursor = "pointer";
+        
+    myStartBTN.innerHTML = "START";
+    myStartBTN.style.cursor = "pointer";
+    
+        
+    myStartBTN.addEventListener("click", hideStartShowGame, false);
+    //IT WORKS!!! HALLELUIGHAHSH    
+    
+    myWireframeBTN.addEventListener("click", showWireFrame, false);
+        
+    function showWireFrame() {
+        wireframe.style.display = "block"; 
+        mywireframeHIDE.style.display = "block";
+        }
+        
+    mywireframeHIDE.addEventListener("click", hideWireFrame, false);
+        
+    function hideWireFrame() {
+        wireframe.style.display = "none";
+        mywireframeHIDE.style.display = "none";
+        }
+    
+    myEndBTN.innerHTML = "EXIT";
+    myEndBTN.style.cursor = "pointer";
+    
+        
+    function hideStartShowGame() {
+        myStartScreen.style.display = "none";
+        myGameScreen.style.display = "block";
+        myEndBTN.style.display = "block";
+    }
+    
+    var heightY = 25;
+    var positionY = 0;
+    var myWater = document.querySelector("#wateringCan");
+    var water = document.querySelector("#water");
+        
+    //var myTop = document.querySelector(".flowerTop");
+    //why can I only transform first div of class!?
+    
+    var red = document.querySelector("#flower1");
+    var orange = document.querySelector("#flower2");
+    var yellow = document.querySelector("#flower3");
+    var green = document.querySelector("#flower4");
+    var blue = document.querySelector("#flower5");
+    var purple = document.querySelector("#flower6");
+    
+    var stem1 = document.querySelector("#stem1");
+    var stem2 = document.querySelector("#stem2");
+    var stem3 = document.querySelector("#stem3");
+    var stem4 = document.querySelector("#stem4");
+    var stem5 = document.querySelector("#stem5");
+    var stem6 = document.querySelector("#stem6");
+        
+        
+    myWater.addEventListener("click", growFlowers, false);
+    //myWater.addEventListener("onmousedown", waterYes, false);   //myWater.addEventListener("onmouseup", waterNo, false);
+    myWater.style.cursor = "pointer";
+    
+    
+    heightY = 25;
+    positionY = 0;
+        
+    function growFlowers() {
+        positionY = positionY + 20;
+        
+        
+            console.log(positionY);
+        
+        red.style.transform = "translateY(-" + positionY + "%)";
+        orange.style.transform = "translateY(-" + positionY + "%)";
+        yellow.style.transform = "translateY(-" + positionY + "%)";
+        green.style.transform = "translateY(-" + positionY + "%)";
+        blue.style.transform = "translateY(-" + positionY + "%)";
+        purple.style.transform = "translateY(-" + positionY + "%)";
+        
+        heightY = heightY + 2.2;
+        
+        stem1.style.height = heightY + "%";
+        stem2.style.height = heightY + "%";
+        stem3.style.height = heightY + "%";
+        stem4.style.height = heightY + "%";
+        stem5.style.height = heightY + "%";
+        stem6.style.height = heightY + "%";
+        
+        console.log(heightY);
+        
+        water.style.animation = "spray 1s ease-in-out infinite";
+        //not sure how to make the animation repeat with each click...
+    }
+        
+        
+    myEndBTN.addEventListener("click", showStartResetGame, false);
+        
+        
+    function showStartResetGame() {
+        heightY = 25;
+        positionY = 0;
+    
+        myStartScreen.style.display = "block";
+        myGameScreen.style.display = "none";
+        myEndBTN.style.display = "none";
+        
+        
+        red.style.transform = "translateY(0)";
+        orange.style.transform = "translateY(-" + positionY + "%)";
+        yellow.style.transform = "translateY(-" + positionY + "%)";
+        green.style.transform = "translateY(-" + positionY + "%)";
+        blue.style.transform = "translateY(-" + positionY + "%)";
+        purple.style.transform = "translateY(-" + positionY + "%)";
+        
+        console.log(positionY);
+        
+        
+        stem1.style.height = 25 + "%";
+        stem2.style.height = 25 + "%";
+        stem3.style.height = 25 + "%";
+        stem4.style.height = 25 + "%";
+        stem5.style.height = 25 + "%";
+        stem6.style.height = 25 + "%";
+        
+        console.log(heightY);
+        
+        water.style.animation = "spray 0s ease-in-out infinite";
+    }
+    
+        
+    var heightY = 25;
+    var positionY = 0;
+    </script>
+    
+    </body>
+    
+    
+
+</html>
