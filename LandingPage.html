@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
     
-<head></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    
+    <title>Comic Mentor</title>
+    </head>
 
 <style>
     body {
@@ -9,7 +18,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: aquamarine;
+        background-color: #29c1bf;
         margin: 0;
         padding: 0;
     }
@@ -26,14 +35,15 @@
         
         text-align: center;
         font-size: 2em;
-        color: purple;
+        color: #55286d;
         
-        background-color: aquamarine;
+        background-color: #ff6666;
     }
     
     #productname {
         position: relative;
         box-sizing: border-box;
+        top: 2vh;
         width: 98vw;
         left: 0px;
         
@@ -65,7 +75,7 @@
         left: 40vw;
         width: 20vw;
         height: 10vh;
-        background-color: orange;
+        background-color: #f99f40;
         border-radius: 15%;
         text-align: center;
         font-size: 1.5em;
@@ -76,17 +86,34 @@
     #features {
         position: relative;
         box-sizing: border-box;
-        width: 88vw;
-        left: 5vw;
-        
-        padding: 2px;
+    /*nice*/
+        width: 84vw;
+        left: 7vw;
+        height: auto;
+        padding: 3px;
         margin: 1vw;
         
         font-size: 20px;
+        text-align: center;
         
     }
 
     /*user research: p, h3, .notes*/
+    
+    .userResearch {
+        position: relative;
+        box-sizing: border-box;
+        width: 88vw;
+        left: 5vw;
+        height: auto;
+        padding: 3px;
+        margin: 1vw;
+        
+        
+        background-color: #ff6666;
+
+    }
+    
     p{
         padding: 5px;
         margin: 1vw auto;
@@ -107,6 +134,23 @@
         padding: 2px;
     }
     
+    em{
+        color: #55286d;
+        color: white;
+    }
+    
+    #emVoid{
+        color: white;
+    }
+    
+    .col-sm-4{
+        background-color: #99ffff;   
+    }
+    
+    #logo{
+        width: 80vw;
+        height: auto;
+    }
     
     
 </style>
@@ -117,18 +161,62 @@
     
     <div id="title"><h2>Create. Share. Collaborate. Learn.</h2></div>
     
-    <div id="productname"><h1>[Insert product name here]</h1></div>
+    <div id="productname"><h1>Comic Mentor</h1></div>
     
-    <div id="description">So many social media sites are homes for artists. However, a platform not tailored to them leaves them lost and a bit confused at times. [name]'s goal is to allow artists to interact, learn, and share with the intent of growing as artists. You can feel free to promote without being lost in a platform that promotes popular posts and gives little chance to grow attention. [name] also allows artists to do peer review and critiques.</div>
+    <div id="description">So many social media sites are homes for artists. However, a platform not tailored to them leaves them lost and a bit confused at times. <em>Comic Mentor's</em> goal is to allow artists to interact, learn, and share with the intent of growing as artists. You can feel free to promote without being lost in a platform that promotes popular posts and gives little chance to grow attention. <em>Comic Mentor</em> also allows artists to do peer review and critiques.</div>
    
     <div id="launchBTN">Launch</div>
     
-    <div id="features">LIST OF FEATURES
-    <br>ITEM 1<br>ITEM 2<br>etc etc etc........</div>
-    
-    <div id="userReseach">
+    <div id="features" class="container">
+    FEATURES:
+        <div class="row">
+           <div class="col-sm-4">
+               <a class="btn btn-link" role="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">
+            Learning </a> </div>
+            
+            <div class="col-sm-4">  
+                <a class="btn btn-link" role="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
+            Collaboration
+                </a></div>
+            
+            <div class="col-sm-4 ">
+                <a class="btn btn-link" role="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">
+            Advertise
+                </a></div>
+        </div>  
+        
+        
+    <div class="row">
+      <div class="col-sm-4">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="card card-body">
+            Comic Mentor strives to be a place where creators can learn and thrive. One of the key features are allowing artists to work together to improve themselves. We have both a reviewed section of learning resources and a community section that allows for peer learning.
+            </div>
+            </div>
+      </div>
+      
+        <div class="col-sm-4">
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card card-body">
+            Our community features allow artists a place to come together to not only learn, but collaborate on projects as well. Whether it be a direct collaboration or a themed event.
+            </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-4">
+            <div class="collapse multi-collapse" id="multiCollapseExample3">
+            <div class="card card-body">
+            Comic Mentor's goal is to help artists hone their skills and work towards being able to publish their work. Because of this goal there are spaces to advertise any published work along with any commissions postings.
+            </div>
+            </div>
+        </div>
+    </div>
+</div>    
+
+
+    <div class="userResearch">
         <h3>Research</h3>
-        <p>Generally when I talked to people, one of the main concerns with artists using social media was that it was extremely hard to get noticed. The way most sites work is that they suggest and promote <em>already</em> popular posts. That makes it insanely hard to start out as an artist.</p>
+        <p>Generally when I talked to people, one of the main concerns with artists using social media was that it was extremely hard to get noticed. The way most sites work is that they suggest and promote <em id="emVoid">already</em> popular posts. That makes it insanely hard to start out as an artist.</p>
         
         <img class="notes" src="research1.jpeg">
         <img class="notes" src="research2.jpeg">
@@ -139,15 +227,50 @@
     </div>
     
     
-    <div id="wireframe">WIREFRAME SKETCHES HERE</div>
+    <div id="wireframe" class="userResearch">
+        <p>Wireframes</p>
+        <img class="notes" src="wireframe1.jpeg">
+        <img class="notes" src="wireframe2.jpeg">
+    
+    
+    </div>
    
-    <div id="graphics">Graphics and such (buttons, etc) here</div>
     
-    <div id="prototype">Prototype, interactive workflow.</div>
     
-    <div id="pitch">My pitch will go here.</div>
     
-    <div id="video">VIDEO HERE</div>
+    <div id="graphics" class="userResearch">
+        <p>Graphics</p>
+        <img id="logo" class="notes" src="CMlogo.png">
+    </div>
+    
+    
+    
+    <div id="prototype" class="userResearch">
+        Prototype, interactive workflow.
+    </div>
+    
+    
+    
+    
+    <div id="pitch" class="userResearch">
+        My pitch will go here.
+    </div>
+    
+    
+    
+    
+    <div id="video" class="userResearch">
+        VIDEO HERE
+    </div>
+    
+   
+    
+    
+    
+    
+    
+    
+    
     
     <script>
         var launchBTN;
@@ -158,11 +281,18 @@
         
         function launchPage() {
             //code to open final page
-            
+            window.open("GITHUB URL HERE!!");
         }
         
     </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
+
 </body>
     
     
