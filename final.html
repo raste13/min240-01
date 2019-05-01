@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<!--bootstrap-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    
+<title>Comic Mentor</title>
+</head>
+
+
+<style>
+    body {
+        box-sizing: border-box;
+        background-color: #29c1bf;
+        color: #55286d;
+        font-size: 20px;
+        
+    }
+    
+    #title {
+        position: relative;
+        box-sizing: border-box;
+        top: 3vh;
+        left: 0px;
+        width: 100vw;
+        height: 22vh;
+        margin: 1vw auto;
+        padding: 2px;
+        
+        text-align: center;
+        
+        line-height: 15vh;
+        
+        background-color: #ff6666;
+    }
+    
+    #logo{
+        position: relative;
+        height: 22vh;
+        animation: fadein 2s ease-in;
+    }
+    
+    @keyframes fadein {
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    
+    .container{
+        text-align: center;
+    }
+    
+    #navBar {
+        position: relative;
+        top: 5vh;
+        height: 10vh;
+        left: 0vw;
+        font-size: 2.5vh;
+        text-align: center;
+        line-height: 5vh;
+        
+    }
+    
+    
+            #nav1 {
+                position: absolute;
+                left: -10vw;
+            }
+
+            #nav2 {
+                position: absolute;
+                left: 3vw;
+
+            }
+
+            #nav3 {
+                position: absolute;
+                left: 15vw;
+            }
+
+            #nav4 {
+                position: absolute;
+                left: 35vw;    
+
+            }
+
+            #nav5 {
+                position: absolute;
+                left: 55vw;
+
+            }
+
+            #nav6 {
+                position: absolute;
+                left: 70vw;
+                line-height: 3.5vh;
+                display: block;
+            }
+
+            #nav7 {
+                position: absolute;
+                left: 70vw;
+                display: none;
+            }
+
+    
+.dropbtn {
+  background-color: #99ffff;
+  padding: 10px;
+  font-size: 2.5vh;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ff9933;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 0.5vw;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #99ffff;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #99ffff;}
+    
+    
+    #featured{
+        position: relative;
+        top: 10vh;
+        padding: 1vmin;
+        left: 55vw;
+        width: 40vw;
+        background-color: #ff6666;
+        font-size: 3vw;
+        text-align: center;
+        animation: fadein 2s ease-in;
+    }   
+    
+    #featureImage{
+        width: 35vw;
+        height: auto;
+        overflow: hidden;
+    }
+    
+    
+    #featureWeek{
+        font-size: 20px;
+        text-align: left;
+    }
+    
+    
+    #recentForum{
+        position: relative;
+        top: 12vh;
+        padding: 1vmin;
+        left: 55vw;
+        width: 40vw;
+        background-color: #ff6666;
+        font-size: 3vw;
+        text-align: center;
+        animation: fadein 2s ease-in;
+    }   
+    
+    #forum {
+        padding: 1vmin;
+        text-align: left;
+        font-size: 20px;
+        color: white;
+        line-height: 15px;
+    }
+    
+    #forum a {
+        color: white;
+    }
+    
+    
+    #recentPosts {
+        position: absolute;
+        float: left;
+        top: 47.3vh;
+        padding: 1vw;
+        left: 2vw;
+        width: 50vw;
+        background-color: #ff6666;
+        font-size: 20px;
+        text-align: center;
+        animation: fadein 2s ease-in;
+    }
+    
+    
+    .text{
+        text-align: left;
+    }
+    
+    .imgPost {
+        width: 48vw;
+        height: auto;
+        text-align: center;
+    }
+    
+    #post2{
+        position: relative;
+        top: vh;
+    }
+    
+    
+    #signUpWindow {
+        z-index: 100;
+        position: absolute;
+        background-color: #99ffff;
+        padding: 1vw;
+        top: 28vh;
+        width: 80vw;
+        transform: translateX(10vw);
+        height: auto;
+        display: none;
+        animation: fadein 2s ease-in;
+    }
+    
+    #submitForm {
+        background-color: #ff9933;
+        padding: 1vw;
+        width: 10.5vw;
+        height: auto;
+        font-size: 2.6vw;
+    }
+    
+    
+    </style>
+    
+<body>
+    
+    <div id="title">
+        <img id="logo" alt="Comic Mentor logo" src="CMlogo.png">
+    </div>
+    
+    <div class="container">
+    <div id="navBar">    
+        
+        <div class="dropdown" id="nav1">      
+        <button class="dropbtn">Learn</button>
+            <div class="dropdown-content">
+                <a href="#">Art tutorials</a>
+                <a href="#">Equipment</a>
+                <a href="#">Writing</a>
+                <a href="#">Comic format</a>
+                <a href="#">How to sell your art!</a>
+            </div>
+        </div>
+            
+        
+        <div class="dropdown" id="nav2">      
+        <button class="dropbtn">Post</button>
+            <div class="dropdown-content">
+                <a href="#">Post your art!</a>
+                <a href="#">Critique art!</a>
+            </div>
+        </div>
+        
+        
+        <div class="dropdown" id="nav3">      
+        <button class="dropbtn">Community</button>
+            <div class="dropdown-content">
+                <a href="#">Community tutorials</a>
+                <a href="#">Questions</a>
+                <a href="#">Prompts</a>
+            </div>
+        </div>
+        
+        
+        <div class="dropdown" id="nav4">      
+        <button class="dropbtn">Commissions</button>
+            <div class="dropdown-content">
+                <a href="#">Post listing</a>
+                <a href="#">Search listings</a>
+            </div>
+        </div>
+        
+        
+        
+        <div class="dropdown" id="nav5">      
+        <button class="dropbtn">Comics</button>
+            
+            <div class="dropdown-content">
+                <a href="#">Post comics!</a>
+                <a href="#">Search comics</a>
+            </div>
+        </div>
+        
+        
+        
+        <div class="dropdown" id="nav6">      
+        <button id="signUp" class="dropbtn">Sign in/Sign up</button>
+        </div>
+        
+        
+        <!--alt? hide show ?--> 
+        <div class="dropdown" id="nav7">      
+        <button class="dropbtn">Profile</button>
+            
+            <div class="dropdown-content">
+                <a href="#">View profile</a>
+                <a href="#">Settings</a>
+                <a href="" id="#logout">Log out</a>
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+    </div>
+    
+    <div id="featured">
+    <p>Featured Comic of the week!</p>    
+        
+        <img id="featureImage" src="joe-ciciarelli-1474672-unsplash.jpg">
+        <div id="featureWeek">
+            <em>Description about comic.</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod diam eget felis lobortis lobortis. Maecenas hendrerit felis quis diam convallis, at egestas justo cursus. Praesent aliquet nisl efficitur ligula consectetur, vel fermentum sem accumsan. 
+        </div>
+    </div>
+    
+    
+    
+    <div id="recentForum">
+    Recent Community Posts
+        <div id="forum">
+            <p><a href="#">100 Theme Challenge</a></p>
+            <p><a href="#">Disney Zine</a></p>
+            <p><a href="#">Inktober</a></p>
+            <p><a href="#">Huevember</a></p>
+        </div>    
+    </div>
+    
+    
+    <div id="recentPosts">
+        
+        
+        <div class="text" id="post1">
+        
+            <div class="imgPost"><img class="imgPost" src="annie-spratt-261998-unsplash.jpg"></div>
+            
+        <p>Recent post example with placeholder image!</p> 
+        </div>
+    
+    
+        <div class="text" id="post2">
+        
+            <div class="imgPost"><img class="imgPost" src="clint-bustrillos-1406533-unsplash.jpg"></div>
+            
+        <p>Recent post example with placeholder image!</p> 
+        </div>
+        
+        
+        <div class="text" id="post3">
+        
+            <div class="imgPost"><img class="imgPost" src="jason-leung-606077-unsplash.jpg"></div>
+            
+        <p>Recent post example with placeholder image!</p> 
+        </div>
+        
+        
+        
+        <div class="text" id="post4">
+        
+            <div class="imgPost"><img class="imgPost" src="miika-laaksonen-737086-unsplash.jpg"></div>
+        <p>Recent post example with placeholder image!</p> 
+        </div>
+        
+        
+    <div class="text" id="post5">
+        
+            <div class="imgPost"><img class="imgPost" src="rober-gonzalez-394299-unsplash.jpg"></div>
+        <p>Recent post example with placeholder image!</p> 
+        </div>
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    <div id="signUpWindow">
+        <p>Hello! Welcome to Comic Mentor!</p>
+        <p>Fill out the information below and hit submit to sign up!</p>
+        
+    <form>
+        E-mail:<br>
+        <input type="text" name="email" value="email@example.com">
+        <br>
+        Username:<br>
+        <input type="text" name="username" value="User">
+        <br>
+        Password:<br>
+        <input type="text" name="password" value="password">
+        <br><br>
+        
+        
+        <div id="submitForm">Submit</div>
+        
+        
+        
+        
+    </form> 
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+      
+        var signUpBTN;
+        
+        signUpBTN = document.querySelector("#signUp");
+           
+        signUpBTN.style.cursor = "pointer";
+        signUpBTN.addEventListener("click", openSignUpWindow, false);  
+        
+        var nav6;
+        var nav7;
+        nav6 = document.querySelector("#nav6");
+        nav7 = document.querySelector("#nav7");
+        
+        var signUpWindow;
+        signUpWindow = document.querySelector("#signUpWindow"); 
+        
+        
+        function openSignUpWindow () {
+            nav6.style.display = "none";
+            nav7.style.display = "block";
+            signUpWindow.style.display = "block";
+        }
+        
+        var submit;
+        submit = document.querySelector("#submitForm");
+        
+        submit.style.cursor = "pointer";
+        
+        submit.addEventListener("click", closeWindow, false);
+        
+        function closeWindow () {
+            signUpWindow.style.display = "none";
+            nav6.style.display = "none";
+            signUpBTN.style.display = "none";
+            nav7.style.display = "block";
+        }
+        
+        
+        var logoutBTN;
+        logoutBTN = document.querySelector("#logout");
+        
+        logoutBTN.addEventListener("click", logout, false);
+        
+        function logout () {
+            nav6.style.display= "block";
+            nav7.style.display= "none";
+        }
+        
+        
+    
+    </script>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    
+    
+    </body>
